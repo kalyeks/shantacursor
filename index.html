@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Cursor</title>
+  <style>
+    * { cursor: none; } /* hide the real cursor */
+
+    #cursor {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      pointer-events: none; /* so it doesn't block clicks */
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="cursor" src="your-face-image.png">
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
+    });
+  </script>
+
+</body>
+</html>
