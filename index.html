@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <div id="mobile-message">Nice try. Come back with a real screen.</div>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shantamap</title>
   <style>
@@ -15,7 +16,19 @@
       transform: translate(-50%, -50%);
       z-index: 9999;
     }
+#mobile-message {
+  display: none;
+  text-align: center;
+  margin-top: 40vh;
+  font-size: 24px;
+  font-family: sans-serif;
+}
 
+@media (max-width: 768px) {
+  #container { display: none; }
+  #cursor { display: none; }
+  #mobile-message { display: block; }
+}
     #container {
       position: relative;
       width: 100vw;
